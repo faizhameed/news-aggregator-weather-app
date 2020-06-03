@@ -1,0 +1,20 @@
+.news-container {
+  padding: 20px 40px;
+
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  .newslist {
+    background-color: #ebcee670;
+    text-align: left;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    a {
+      color: rgb(165, 165, 165);
+      &:hover {
+        color: #6d005b;
+      }
+    }
+  }
+}
