@@ -1,33 +1,23 @@
 import React, { useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import { requestNews } from "./redux/news/actions";
+import { connect } from "react-redux";
+import NewsList from "./components/NewsList/NewsList";
 
-function App() {
+function App({ requestNews }) {
   useEffect(() => {
-    fetch(
-      "https://gnews.io/api/v3/top-news?token=db9f2b7ed1de35a753578fa3022c9a7b"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-  }, []);
+    requestNews();
+    console.log("requesting news");
+  }, [requestNews]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></a>
-      </header>
+      <NewsList />
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  requestNews: () => dispatch(requestNews()),
+});
+
+export default connect(null, mapDispatchToProps)(App);
