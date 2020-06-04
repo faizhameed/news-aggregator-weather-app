@@ -2,7 +2,8 @@ import { geoLocationTypes } from "./types";
 
 const INITIAL_STATE = {
   location: null,
-  error: null,
+  error: false,
+  pending: true,
 };
 
 export const geoLocationReducer = (state = INITIAL_STATE, action) => {
@@ -11,8 +12,19 @@ export const geoLocationReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         location: action.payload,
+        pending: false,
       };
-
+    case geoLocationTypes.GET_GEO_LOCATION_PENDING:
+      return {
+        ...state,
+        pending: true,
+      };
+    case geoLocationTypes.GET_GEO_LOCATION_FAILED:
+      return {
+        ...state,
+        pending: false,
+        error: true,
+      };
     default:
       return state;
   }

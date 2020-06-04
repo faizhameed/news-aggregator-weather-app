@@ -3,6 +3,7 @@ import "./App.css";
 import { requestNews } from "./redux/news/actions";
 import { connect } from "react-redux";
 import NewsList from "./components/NewsList/NewsList";
+import Weather from "./components/Weather/Weather";
 
 function App({ requestNews }) {
   useEffect(() => {
@@ -11,6 +12,7 @@ function App({ requestNews }) {
   }, [requestNews]);
   return (
     <div className="App">
+      <Weather />
       <NewsList />
     </div>
   );
