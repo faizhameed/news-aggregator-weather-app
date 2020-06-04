@@ -9,7 +9,7 @@ const NewsList = ({ newsListData, pending }) => {
         ? newsListData.data.articles.map((article) => {
             return (
               <div className="newslist" key={article.url}>
-                <a href={article.url} target="_blank">
+                <a href={article.url} target="_blank" rel="noopener noreferrer">
                   <h2>{article.title}</h2>
                 </a>
                 <p>{article.source.name}</p>
