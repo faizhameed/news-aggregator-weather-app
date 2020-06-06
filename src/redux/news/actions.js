@@ -1,9 +1,8 @@
 import { newsTypes } from "./types";
 import Axios from "axios";
 
-export const requestNews = () => {
-  let url =
-    "https://gnews.io/api/v3/top-news?token=db9f2b7ed1de35a753578fa3022c9a7b";
+export const requestNews = (country = "in") => {
+  let url = `https://gnews.io/api/v3/search?q=${country}&country=${country}&token=db9f2b7ed1de35a753578fa3022c9a7b`;
   return function (dispatch) {
     dispatch({
       type: newsTypes.FETCH_NEWS_PENDING,

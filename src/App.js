@@ -5,11 +5,13 @@ import { connect } from "react-redux";
 import NewsList from "./components/NewsList/NewsList";
 import Weather from "./components/Weather/Weather";
 
-function App({ requestNews }) {
+function App({ requestNews, data }) {
   useEffect(() => {
-    requestNews();
-    console.log("requesting news");
-  }, [requestNews]);
+    if (data !== null) {
+      requestNews(data.data.sys.country);
+      console.log("requesting news");
+    }
+  }, [requestNews, data]);
   return (
     <div className="App">
       <Weather />
@@ -18,8 +20,12 @@ function App({ requestNews }) {
   );
 }
 
+const mapStateToProps = ({ weather: { data } }) => ({
+  data,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   requestNews: () => dispatch(requestNews()),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
