@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import {
   getGeoLocation,
   getWeatherReport,
 } from "../../redux/geoLocation/actions";
-
+import "./Weather.scss";
 const Weather = ({
   locationCoordinates,
   locationPending,
@@ -13,6 +13,9 @@ const Weather = ({
   weatherData,
   weatherPending,
 }) => {
+  const [weatherDetail, setWeatherDetail] = useState({
+    currentTemperature: null,
+  });
   useEffect(() => {
     getGeoLocation();
   }, [getGeoLocation]);
@@ -23,6 +26,14 @@ const Weather = ({
       getWeatherReport(locationCoordinates);
     }
   }, [locationPending, locationCoordinates]);
+  useEffect(() => {
+    if (!weatherPending && weatherData !== null) {
+      setWeatherDetail({
+        ...weatherDetail,
+        currentTemperature: (weatherData.data.main.temp - 273).toFixed(1),
+      });
+    }
+  }, [weatherPending, weatherData]);
   return (
     <div>
       {locationPending ? (
@@ -30,12 +41,20 @@ const Weather = ({
       ) : (
         <div>
           {!weatherPending && weatherData !== null ? (
-            <React.Fragment>
-              <h4>{weatherData.data.name}</h4>
-              <h5>{weatherData.data.main.temperature}</h5>
-            </React.Fragment>
+            <div className="weather-container">
+              <div>
+                <h4>{weatherData.data.name}</h4>
+                <h2>{weatherDetail.currentTemperature + " "}&#8451;</h2>
+              </div>
+              <div>
+                <img
+                  src={`http://openweathermap.org/img/wn/${weatherData.data.weather[0].icon}@2x.png`}
+                  alt="weather-icon"
+                />
+              </div>
+            </div>
           ) : (
-            <h4>How here</h4>
+            <h4>fetching weather ...</h4>
           )}
         </div>
       )}
