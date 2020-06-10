@@ -5,15 +5,15 @@
   display: block;
   margin: 0 auto;
   .newslist {
-    background-color: #ebcee670;
+    background: linear-gradient(223.88deg, #84848498 8.89%, #000000 94.31%);
     text-align: left;
     padding: 20px;
     margin: 20px 0;
     border-radius: 8px;
     a {
-      color: rgb(165, 165, 165);
+      color: rgb(255, 255, 255);
       &:hover {
-        color: #6d005b;
+        color: #dddddd;
       }
     }
   }
