@@ -41,7 +41,7 @@ const Weather = ({
       ) : (
         <div>
           {!weatherPending && weatherData !== null ? (
-            <div className="weather-container">
+            <div className="weather-container effect3">
               <div>
                 <h4>{weatherData.data.name}</h4>
                 <h2>{weatherDetail.currentTemperature + " "}&#8451;</h2>
