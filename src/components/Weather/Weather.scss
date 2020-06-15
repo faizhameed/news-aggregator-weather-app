@@ -1,5 +1,4 @@
 .weather-container {
-  background: linear-gradient(223.88deg, #848484 8.89%, #000000 94.31%);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -7,7 +6,7 @@
   width: 300px;
   border-radius: 4px;
   padding: 20px 10px;
-  color: white;
+  color: #1c1c1c;
   margin: 20px auto 0;
   align-items: center;
   h4,
@@ -16,4 +15,27 @@
     margin: 0;
     padding-left: 20px;
   }
+}
+
+.effect3 {
+  position: relative;
+}
+.effect3:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
 }
