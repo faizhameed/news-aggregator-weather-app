@@ -22,16 +22,15 @@ const Weather = ({
 
   useEffect(() => {
     if (!locationPending && locationCoordinates !== undefined) {
-      console.log("getWeatherReport", locationCoordinates.latitude);
       getWeatherReport(locationCoordinates);
     }
-  }, [locationPending, locationCoordinates]);
+  }, [locationPending, locationCoordinates, getWeatherReport]);
   useEffect(() => {
     if (!weatherPending && weatherData !== null) {
-      setWeatherDetail({
-        ...weatherDetail,
+      setWeatherDetail((prevState) => ({
+        ...prevState,
         currentTemperature: (weatherData.data.main.temp - 273).toFixed(1),
-      });
+      }));
     }
   }, [weatherPending, weatherData]);
   return (
