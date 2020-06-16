@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/news-aggregator-weather-app/static/css/main.9173300d.chunk.css",
+    "main.js": "/news-aggregator-weather-app/static/js/main.0e034043.chunk.js",
+    "main.js.map": "/news-aggregator-weather-app/static/js/main.0e034043.chunk.js.map",
+    "runtime-main.js": "/news-aggregator-weather-app/static/js/runtime-main.d326df62.js",
+    "runtime-main.js.map": "/news-aggregator-weather-app/static/js/runtime-main.d326df62.js.map",
+    "static/js/2.b3a73bc6.chunk.js": "/news-aggregator-weather-app/static/js/2.b3a73bc6.chunk.js",
+    "static/js/2.b3a73bc6.chunk.js.map": "/news-aggregator-weather-app/static/js/2.b3a73bc6.chunk.js.map",
+    "index.html": "/news-aggregator-weather-app/index.html",
+    "precache-manifest.364a4a2a5b481622c056c68d23f66710.js": "/news-aggregator-weather-app/precache-manifest.364a4a2a5b481622c056c68d23f66710.js",
+    "service-worker.js": "/news-aggregator-weather-app/service-worker.js",
+    "static/css/main.9173300d.chunk.css.map": "/news-aggregator-weather-app/static/css/main.9173300d.chunk.css.map",
+    "static/js/2.b3a73bc6.chunk.js.LICENSE.txt": "/news-aggregator-weather-app/static/js/2.b3a73bc6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d326df62.js",
+    "static/js/2.b3a73bc6.chunk.js",
+    "static/css/main.9173300d.chunk.css",
+    "static/js/main.0e034043.chunk.js"
+  ]
+}
