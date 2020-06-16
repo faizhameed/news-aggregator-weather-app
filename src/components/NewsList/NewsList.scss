@@ -9,6 +9,7 @@
     border-radius: 8px;
     max-width: 450px;
     min-width: 200px;
+    transition: 0.2s;
     P {
       color: #1c1c1c;
       font-family: "Oswald", sans-serif;
@@ -20,6 +21,9 @@
       &:hover {
         color: #8c8c8c;
       }
+    }
+    &:hover {
+      transform: translate(5px, -20px);
     }
   }
 }
