@@ -9,7 +9,6 @@ function App({ requestNews, data }) {
   useEffect(() => {
     if (data !== null) {
       requestNews(data.data.sys.country);
-      console.log("requesting news");
     }
   }, [requestNews, data]);
   return (
@@ -25,7 +24,7 @@ const mapStateToProps = ({ weather: { data } }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestNews: () => dispatch(requestNews()),
+  requestNews: (country) => dispatch(requestNews(country)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

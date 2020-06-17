@@ -1,7 +1,8 @@
 import { newsTypes } from "./types";
 import Axios from "axios";
 
-export const requestNews = (country = "in") => {
+export const requestNews = (country) => {
+  country = country.toLowerCase();
   let url = `https://gnews.io/api/v3/search?q=${country}&country=${country}&token=db9f2b7ed1de35a753578fa3022c9a7b`;
   return function (dispatch) {
     dispatch({
