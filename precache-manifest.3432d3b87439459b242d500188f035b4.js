@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b30cba5545b720e4b79bcd15b92a011",
+    "revision": "c75371554348825636f99cea2201b1ca",
     "url": "/news-aggregator-weather-app/index.html"
   },
   {
-    "revision": "64e62b5f622c14d814e0",
+    "revision": "6b2b6394ed1c5bccfd98",
     "url": "/news-aggregator-weather-app/static/css/main.9173300d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/news-aggregator-weather-app/static/js/2.b3a73bc6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "64e62b5f622c14d814e0",
-    "url": "/news-aggregator-weather-app/static/js/main.db1b1460.chunk.js"
+    "revision": "6b2b6394ed1c5bccfd98",
+    "url": "/news-aggregator-weather-app/static/js/main.09e6c958.chunk.js"
   },
   {
     "revision": "3014e902ea4b9c555683",
