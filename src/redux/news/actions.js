@@ -1,27 +1,15 @@
 import { newsTypes } from "./types";
-import Axios from "axios";
 
-export const requestNews = (country) => {
-  country = country.toLowerCase();
-  let url = `https://gnews.io/api/v3/search?q=${country}&country=${country}&token=db9f2b7ed1de35a753578fa3022c9a7b`;
-  return function (dispatch) {
-    dispatch({
-      type: newsTypes.FETCH_NEWS_PENDING,
-    });
+export const requestNews = (country) => ({
+  type: newsTypes.FETCH_NEWS_PENDING,
+  country,
+});
 
-    Axios.get(url)
-      .then((response) =>
-        dispatch({
-          type: newsTypes.FETCH_NEWS_SUCCESS,
-          payload: response,
-        })
-      )
-
-      .catch((error) =>
-        dispatch({
-          type: newsTypes.FETCH_NEWS_FAILED,
-          payload: error,
-        })
-      );
-  };
-};
+export const receiveNews = (newsData) => ({
+  type: newsTypes.FETCH_NEWS_SUCCESS,
+  payload: newsData,
+});
+export const errorReceivingNews = (error) => ({
+  type: newsTypes.FETCH_NEWS_FAILED,
+  payload: error,
+});
