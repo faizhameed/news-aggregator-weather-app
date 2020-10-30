@@ -1,29 +1,5 @@
 import { geoLocationTypes } from "./types";
 import Axios from "axios";
-// export function getGeoLocation() {
-//   return (dispatch) => {
-//     dispatch({
-//       type: geoLocationTypes.GET_GEO_LOCATION_PENDING,
-//     });
-//     const geolocation = navigator.geolocation;
-// geolocation.getCurrentPosition((position) => {
-//   console.log(position.coords);
-//   dispatch({
-//     type: geoLocationTypes.GET_GEO_LOCATION_SUCCESS,
-//     payload: {
-//       latitude: position.coords.latitude,
-//       longitude: position.coords.longitude,
-//     },
-//   });
-// });
-//     if (!navigator.geolocation) {
-//       dispatch({
-//         type: geoLocationTypes.GET_GEO_LOCATION_FAILED,
-//       });
-//     }
-
-//   };
-// }
 
 export const getGeoLocation = () => ({
   type: geoLocationTypes.GET_GEO_LOCATION_PENDING,

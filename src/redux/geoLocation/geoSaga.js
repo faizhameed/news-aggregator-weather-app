@@ -13,7 +13,6 @@ const requestGeoLocation = () =>
 function* fetchGeoLocation(action) {
   const position = yield call(requestGeoLocation);
   const { latitude, longitude } = position.coords;
-  console.log("data", { latitude, longitude });
   try {
     yield put(receiveGeoLocation({ latitude, longitude }));
   } catch (error) {
